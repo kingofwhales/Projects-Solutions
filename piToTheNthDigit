@@ -1,0 +1,21 @@
+public class PiToTheNth {
+
+    public static void main(String[] args) {
+
+        System.out.println("please input how many digits you want your PI to go?  Max: 15");    
+        Scanner scan1 = new Scanner(System.in);
+        
+        int digits = scan1.nextInt();
+        double finalValue =0;
+        if(digits >15){
+            System.out.println("please input something smaller");
+        }else{
+            double transitNumber = Math.PI * Math.pow(10, digits);
+            System.out.println(transitNumber);
+            long transitNumber2 = (long)Math.floor(transitNumber);
+            resultPi = transitNumber2/ Math.pow(10,digits);
+        }
+        System.out.println(resultPi);
+        
+    }
+}

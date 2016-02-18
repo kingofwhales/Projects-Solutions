@@ -1,0 +1,40 @@
+package ex.fibonacci;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author WeiLi
+ */
+public class EXFibonacci {
+
+    public static void main(String[] args) {
+        // 1. get input n
+        // 2. depending on n, if it's less than or equal to 2
+        // 3. if more than 2, than we always print out the first 2 first. 
+        // 4. an array would probably be a better choice just because it' easier to access the previous elements. 
+        // main summary: read into array and use index to get the next element. 
+        
+        System.out.println("please give me what you want");
+        Scanner scan1 = new Scanner(System.in);
+        int numberOfElements = scan1.nextInt();
+        
+        if (numberOfElements<=0){
+            System.out.println("plz input something larger than 0");
+        }else if(numberOfElements <=2){
+            System.out.println(numberOfElements-1);
+        }else{
+            ArrayList<Integer> arrayOfOutput = new ArrayList<>();
+            arrayOfOutput.add(0);
+            arrayOfOutput.add(1);
+            int limit = numberOfElements -2;
+            for(int counter =0; counter<limit; counter++){
+                int nextOne = arrayOfOutput.get(counter) + arrayOfOutput.get(counter+1);
+                arrayOfOutput.add(nextOne);
+                
+            }   
+            System.out.println(arrayOfOutput);
+        }
+    }
+}
